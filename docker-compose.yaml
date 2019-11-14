@@ -1,0 +1,22 @@
+
+version: "2.0"
+
+services:
+  static_img_server:
+    container_name: static_img_server
+    image: openresty/openresty
+    # build: .
+    restart: always
+    # user: root
+    # privileged: true
+    working_dir: /usr/local/openresty/nginx/logs
+    # environment:
+    #   NB_UID: ${UID}
+    #   NB_GID: ${GID}
+    ports:
+      - ${PORT}:80
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /mnt/cephfs_online/ceph_bk_storage:/data/pics
+      - ${WORK_DIR}/config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+      - ${WORK_DIR}/logs:/usr/local/openresty/nginx/logs
