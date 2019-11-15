@@ -8,7 +8,7 @@
 
 ```sh
 cd ~/mgnnx
-WORK_DIR=$PWD PORT=8087 docker-compose up
+WORK_DIR=$PWD PORT=8087 docker-compose up -d
 ```
 
 ```sh
