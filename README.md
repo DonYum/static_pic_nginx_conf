@@ -8,7 +8,7 @@
 
 ```sh
 cd ~/mgnnx
-WORK_DIR=$PWD PORT=8087 docker-compose up -d
+WORK_DIR=$PWD PICS_DIR=/data/objs/rawimgs PORT=8087 docker-compose up -d
 tail -f access.log | awk '{if ($10>0) print $1"\t"$3"\t"$6"\t"$9"\t"$10}'
 ```
 
